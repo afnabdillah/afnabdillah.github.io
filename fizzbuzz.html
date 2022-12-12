@@ -19,7 +19,7 @@
         <script>
             const fizzbuzz = (param) => {
                 let n = document.getElementById(param).value;
-                if (n <= 0) {
+                if (typeof n !== "number" || n <= 0) {
                     document.getElementById("output").innerHTML="invalid input";
                     document.getElementById("output").style.color="red";
                 } else if (n % 3 == 0 && n % 5 == 0) {
@@ -38,14 +38,5 @@
             }
         </script>
     </main>
-
-
-
-
-
 </body>
-
-
-
-
 </html>
