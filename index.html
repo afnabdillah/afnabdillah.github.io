@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Affan's personal page">
+    <meta name="keywords" content="CV,Portfolio">
+    <meta name="author" content="afnabdillah">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome!</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <!-- <script src="script.js"></script> -->
+
+</head>
+<body>
+<header>
+    <div class="container">
+        <ul>
+            <li class="name">AFFAN ABDILLAH</li>
+            <li class="header-list">
+                <a href="#middle-wrapper">About Me</a>
+            </li>
+            <li class="header-list">
+                <a href="#projects-wrapper">Example Projects</a>
+            </li>
+            <li class="header-list">
+                <a href="#message-wrapper">Contact Me</a>
+            </li>
+        </ul>
+    </div>
+</header>
+<main>
+    <div id="top-wrapper">
+        <h1>AFFAN ABDILLAH<span>.</span></h1>
+        <p>MY PORTFOLIO</p>
+    </div>
+    <div id="middle-wrapper">
+        <h2>About Me</h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem repellendus minus hic exercitationem animi. Sequi ratione corporis facilis. Tempora veniam aliquam repudiandae ipsam temporibus, quibusdam nobis laborum odio facilis hic? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus repellat totam facere fugiat vero, rerum itaque quis quod, odit id temporibus aliquam corrupti minima impedit est blanditiis neque tempore iure.</p>
+    </div>
+    <div id="projects-wrapper">
+        <h2>Example Projects</h2>
+        <ul class="flex-list">
+            <li>
+                <img class="project-images" src="Seksalis.jpg" alt="image-1">
+                <p>Image 1</p>
+            </li>
+            <li>
+                <img class="project-images" src="Seksalis.jpg" alt="image-2">
+                <p>Image 2</p>
+            </li>
+            <li>
+                <img class="project-images" src="Seksalis.jpg" alt="image-3">
+                <p>Image 3</p>
+            </li>
+        </ul>
+    </div>
+    <div id="message-wrapper">
+        <h2>Contact Me</h2>
+        <input class= "ipt email" type="text" value="Email (Necessary)">
+        <textarea class="ipt message" type="text">Message (Necessary)</textarea>
+        <button id="send">Send</button>
+    </div>
+</main>
+<footer>
+    <p class="footer-name">AFFAN ABDILLAH</p>
+    <ul class="footer-list">
+        <li>
+            <a href="#middle-wrapper">About Me</a>
+        </li>
+        <li>
+            <a href="#projects-wrapper">Example Projects</a>
+        </li>
+        <li>
+            <a href="#message-wrapper">Contact Me</a>
+        </li>
+    </ul>
+</footer>
+<!-- Bagian Modal -->
+<div id="modal">
+    <div id="modalContent">
+        <span id="closeModalIcon">&times;</span>
+        <p id="modalMessage"></p>
+    </div>
+</div>
+
+<script>
+// Script Modal
+    const modal = document.getElementById("modal");
+    const openModal = document.getElementById("send");
+    const closeModal = document.getElementById("closeModalIcon");
+    const emailName = document.getElementsByClassName("email")[0].value;
+    const messageFill = document.getElementsByClassName("message")[0].innerHTML;
+    console.log(emailName + messageFill);
+    console.log(typeof emailName + typeof messageFill);
+    console.log(emailName === "" || messageFill === "");
+
+// Modal dibuka
+    openModal.addEventListener('click', (emailName,messageFill) => {
+        if (emailName === "" || messageFill === "") {
+            document.getElementById("modalMessage").innerHTML = "Please fill the email/message!";
+        } else {
+            document.getElementById("modalMessage").innerHTML = "Your message has been successfully sent!";
+        }
+        modal.style.display="block";
+    })
+
+// Modal ditutup
+    closeModal.addEventListener('click', () => {
+        modal.style.display="none";
+    })
+
+
+
+</script>
+
+
+
+</body>
+
+
+
+
+
+</html>
